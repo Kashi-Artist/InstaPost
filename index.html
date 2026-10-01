@@ -110,7 +110,7 @@ input:focus,select:focus{border-color:var(--guava);outline:none;box-shadow:0 0 0
 .poster[data-l=c] .price{background:var(--p2);color:var(--p2t);font:800 10cqw/1 var(--display);padding:1.5cqw 4cqw;border-radius:1.5cqw;z-index:2}
 .poster[data-l=c] .shop{position:absolute;right:6cqw;bottom:6cqw;font:600 3.4cqw var(--body);text-align:right;max-width:40%}
 
-/* IMAGEN DE EJEMPLO (1000x1700 = proporción 10:17), debajo de la demo */
+/* IMAGEN DE EJEMPLO (1000x1700 = proporción 10:17), ahora ANTES de la demo */
 .example{margin:0;justify-self:center;width:100%;max-width:300px}
 .example .ph{aspect-ratio:10/17;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line)}
 .example figcaption{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
@@ -187,8 +187,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <body>
 
 <div class="wrap">
-  <!-- IMAGEN HORIZONTAL DEL CABEZOTE: img/cabezote.jpg (recomendado 1800x600 px, proporción 3:1) -->
-  <div class="banner ph" data-name="img/cabezote.jpg"><img src="img/cabezote-1.jpg" alt="Postres artesanales de Zipaquirá" onerror="this.remove()"><a class="logo" href="#">Insta<span style="color:var(--guava)">Postre</span></a></div>
+  <!-- IMAGEN HORIZONTAL DEL CABEZOTE: img/cabezote-1.jpg (recomendado 1800x600 px, proporción 3:1) -->
+  <div class="banner ph" data-name="img/cabezote-1.jpg"><img src="img/cabezote-1.jpg" alt="Postres artesanales de Zipaquirá" onerror="this.remove()"><a class="logo" href="#">Insta<span style="color:var(--guava)">Postre</span></a></div>
 
   <!-- HERO -->
   <div class="hero">
@@ -203,6 +203,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     </div>
 
     <div class="hero-side">
+      <!-- IMAGEN DE EJEMPLO (1000x1700), ahora ANTES de la demo -->
+      <figure class="example">
+        <div class="ph" data-name="img/ejemplo-cheesecake.jpg"><img src="img/ejemplo-cheesecake.jpg" alt="Publicación de ejemplo de un cheesecake de guayaba creada con IA" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>Ejemplo de publicación creada con IA: cheesecake de guayaba, $9.500, 2x1 los miércoles.</figcaption>
+      </figure>
+
       <!-- Demo: el dueño diseña su pieza antes de pasar a la IA -->
       <div class="demo" aria-label="Diseña tu publicación de ejemplo">
         <h2>Diseña tu publicación: elige datos, colores y diseño</h2>
@@ -239,35 +245,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
         <small class="help">Vista de ejemplo. Con la IA, la pieza final se genera con imagen del postre según tu negocio.</small>
       </div>
-
-      <!-- IMAGEN DE EJEMPLO (1000x1700), ahora debajo de la demo -->
-      <figure class="example">
-        <div class="ph" data-name="img/ejemplo-cheesecake.jpg"><img src="img/ejemplo-cheesecake.jpg" alt="Publicación de ejemplo de un cheesecake de guayaba creada con IA" loading="lazy" onerror="this.remove()"></div>
-        <figcaption>Ejemplo de publicación creada con IA: cheesecake de guayaba, $9.500, 2x1 los miércoles.</figcaption>
-      </figure>
     </div>
   </div>
 </div>
-
-<!-- PROBLEMA -->
-<section>
-  <div class="wrap prob">
-    <div>
-      <h2 class="sec-title">Hacer postres te toma el día. Hacer publicidad, no te queda tiempo.</h2>
-      <div class="stats">
-        <div class="stat"><b>80%</b><span>de los negocios encuestados dice que crear publicidad le resulta difícil.</span></div>
-        <div class="stat"><b>60%</b><span>casi nunca publica porque no sabe qué hacer o no tiene tiempo.</span></div>
-      </div>
-      <ul class="pains">
-        <li>No sé diseñar ni qué fotos o textos publicar.</li>
-        <li>No tengo presupuesto para un diseñador o una agencia.</li>
-        <li>Publico un día y luego desaparezco semanas.</li>
-        <li>Dependo de alguien más para cada promoción.</li>
-      </ul>
-      <p class="note">Fuente: encuesta propia a pequeños negocios locales (cafeterías, tiendas de barrio, puestos de comida).</p>
-    </div>
-  </div>
-</section>
 
 <!-- CÓMO FUNCIONA -->
 <section id="como" style="background:var(--card)">
@@ -369,6 +349,26 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <div class="msg" id="msg" role="status" hidden></div>
       <p class="fine full">Usaremos tus datos solo para contactarte sobre este proyecto. Puedes pedir que los borremos cuando quieras.</p>
     </form>
+  </div>
+</section>
+
+<!-- PROBLEMA (ahora después del formulario) -->
+<section>
+  <div class="wrap prob">
+    <div>
+      <h2 class="sec-title">Hacer postres te toma el día. Hacer publicidad, no te queda tiempo.</h2>
+      <div class="stats">
+        <div class="stat"><b>80%</b><span>de los negocios encuestados dice que crear publicidad le resulta difícil.</span></div>
+        <div class="stat"><b>60%</b><span>casi nunca publica porque no sabe qué hacer o no tiene tiempo.</span></div>
+      </div>
+      <ul class="pains">
+        <li>No sé diseñar ni qué fotos o textos publicar.</li>
+        <li>No tengo presupuesto para un diseñador o una agencia.</li>
+        <li>Publico un día y luego desaparezco semanas.</li>
+        <li>Dependo de alguien más para cada promoción.</li>
+      </ul>
+      <p class="note">Fuente: encuesta propia a pequeños negocios locales (cafeterías, tiendas de barrio, puestos de comida).</p>
+    </div>
   </div>
 </section>
 
