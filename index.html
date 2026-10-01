@@ -44,7 +44,8 @@ header.top .wrap{display:flex;justify-content:space-between;align-items:center;p
 .btn:hover{background:var(--guava-d);transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none;padding:10px 22px}
 .btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.hero .btn.ghost{padding:12.5px 26px}
+.btn.green{background:#D2E7B3;color:#1F1419;box-shadow:0 8px 20px -8px #9DB47A}
+.btn.green:hover{background:#C3DC9B;color:#1F1419}
 .note{font-size:.9rem;color:var(--muted);margin-top:14px}
 .sec-title{font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:800;letter-spacing:-.025em;max-width:20em}
 
@@ -132,9 +133,16 @@ input:focus,select:focus{border-color:var(--guava);outline:none;box-shadow:0 0 0
 .step h3{font-size:1.25rem;margin-bottom:6px}
 .step p{margin:0;color:var(--muted)}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
-.tab{font:600 .95rem var(--body);background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:background .15s}
-.tab:hover{background:var(--soft)}
-.tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* Pestañas: pulso constante de blanco a un color de la paleta (cada una con su color y desfase) */
+.tab{--tc:#F5D97E;font:600 .95rem var(--body);background:#fff;color:#1F1419;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:transform .15s;animation:tabPulse 3s ease-in-out infinite}
+.tab:nth-child(1){--tc:#F4A6BE;animation-delay:0s}      /* rosa guayaba */
+.tab:nth-child(2){--tc:#F5D97E;animation-delay:-.6s}    /* mantequilla */
+.tab:nth-child(3){--tc:#C8DDA6;animation-delay:-1.2s}   /* pistacho */
+.tab:nth-child(4){--tc:#E8B26A;animation-delay:-1.8s}   /* caramelo */
+.tab:nth-child(5){--tc:#F7C6D5;animation-delay:-2.4s}   /* rosa suave */
+.tab:hover{transform:translateY(-2px)}
+.tab[aria-selected=true]{animation:none;background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@keyframes tabPulse{0%,100%{background-color:#fff}50%{background-color:var(--tc)}}
 .gbox{margin-top:14px;background:var(--bg);border:1px solid var(--line);border-radius:28px;padding:20px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .g4 .ph.sq{aspect-ratio:1/1}
@@ -181,7 +189,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .form{padding:20px}
   section{padding:64px 0}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.tab{animation:none}}
 </style>
 </head>
 <body>
@@ -196,8 +204,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <h1>Tus postres se ven deliciosos. Tus publicaciones también deberían.</h1>
       <p class="lead">Escribe el nombre del postre, el precio y la promo. Una IA te entrega la publicación lista para Instagram, Facebook o WhatsApp. Sin saber diseñar y sin pagar una agencia.</p>
       <div class="cta">
-        <a class="btn" href="#lista" data-track="cta_hero">Quiero entrar a la lista de espera</a>
-        <a class="btn ghost" href="#como" data-track="cta_como">Ver cómo funciona</a>
+        <a class="btn green" href="#lista" data-track="cta_hero">Quiero entrar a la lista de espera</a>
+        <a class="btn" href="#como" data-track="cta_como">Ver cómo funciona</a>
       </div>
       <p class="note">Para tiendas de postres artesanales de Zipaquirá y Cundinamarca. Primer grupo: Zipaquirá.</p>
     </div>
